@@ -26,4 +26,7 @@
       <frameworkAssembly assemblyName="System.Web.Mvc" />
     </frameworkAssemblies>
   </metadata>
+  <files>
+    <file src="web.config.transform" target="content\web.config.transform"  />
+  </files>
 </package>
