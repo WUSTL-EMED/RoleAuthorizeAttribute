@@ -15,10 +15,10 @@ namespace RoleAuthorize.Extensions
         /// <param name="user"></param>
         /// <param name="names">A comma separated list of role names.</param>
         /// <returns>True if the user is in at least one named role, otherwise false.</returns>
-        public static bool IsInRole(this IPrincipal user, string names)
+        public static bool IsInNamedRole(this IPrincipal user, string names)
         {
             var roleNamesSplit = names.Split(Delimiter).Select(_ => _.Trim()).Where(_ => !String.IsNullOrEmpty(_));
-            return user.IsInRole(roleNamesSplit);
+            return user.IsInNamedRole(roleNamesSplit);
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace RoleAuthorize.Extensions
         /// <param name="user"></param>
         /// <param name="names">An enumerable of role names.</param>
         /// <returns>True if the user is in at least one named role, otherwise false.</returns>
-        public static bool IsInRole(this IPrincipal user, IEnumerable<string> names)
+        public static bool IsInNamedRole(this IPrincipal user, IEnumerable<string> names)
         {
             var users = names.SelectMany(_ => Config.RoleConfig.GetUsers(_)).ToList();
             if (users.Count > 0 && users.Contains(user.Identity.Name, StringComparer.OrdinalIgnoreCase))
