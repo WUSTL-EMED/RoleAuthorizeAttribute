@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>RoleAuthorize</id>
+    <version>$version$</version>
+    <title>RoleAuthorize</title>
+    <authors>Aaron Papp</authors>
+    <owners>Aaron Papp</owners>
+    <licenseUrl>https://github.com/PCFDev/RoleAuthorizeAttribute/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/PCFDev/RoleAuthorizeAttribute</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright © 2016 Aaron Papp</copyright>
+    <language>en-US</language>
+    <tags>authorization authorization-attribute</tags>
+    <dependencies>
+      <!-- I'm not sure this is really needed. -->
+      <dependency id="Microsoft.AspNet.Mvc" version="5.0.0" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" />
+      <frameworkAssembly assemblyName="System.Configuration" />
+      <frameworkAssembly assemblyName="System.Core" />
+      <frameworkAssembly assemblyName="System.Web" />
+      <frameworkAssembly assemblyName="System.Web.Http" />
+      <frameworkAssembly assemblyName="System.Web.Mvc" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
