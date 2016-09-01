@@ -87,6 +87,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RoleAuthorizeExtensions.cs" />
     <None Include="web.config.transform" />
     <None Include="RoleAuthorizeAttribute.nuspec" />
     <Compile Include="Configuration.cs" />
