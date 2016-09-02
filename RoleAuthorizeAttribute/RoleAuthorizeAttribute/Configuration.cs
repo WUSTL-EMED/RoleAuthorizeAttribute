@@ -152,16 +152,12 @@ namespace RoleAuthorize.Config
         private const string _Roles = "roles";
         private const string _Users = "users";
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode"), ConfigurationProperty(_Name, IsKey = true, IsRequired = true)]
+        [ConfigurationProperty(_Name, IsKey = true, IsRequired = true)]
         public string Name
         {
             get
             {
                 return (string)this[_Name];
-            }
-            set
-            {
-                this[_Name] = value;
             }
         }
 
