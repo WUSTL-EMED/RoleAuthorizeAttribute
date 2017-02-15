@@ -37,15 +37,16 @@ namespace RoleAuthorize.Mvc
                 return false;
 
             var users = RoleNamesSplit.SelectMany(_ => Config.RoleConfig.GetUsers(_)).ToList();
-            if (users.Count > 0 && !users.Contains(user.Identity.Name, StringComparer.OrdinalIgnoreCase))
-                return false;
+            if (users.Count > 0 && users.Contains(user.Identity.Name, StringComparer.OrdinalIgnoreCase))
+                return true;
 
             var roles = RoleNamesSplit.SelectMany(_ => Config.RoleConfig.GetRoles(_)).ToList();
-            if (roles.Count > 0 && !roles.Any(user.IsInRole))
-                return false;
+            if (roles.Count > 0 && roles.Any(user.IsInRole))
+                return true;
 
-            if (users.Count == 0 && roles.Count == 0 && !Config.RoleConfig.DefaultAllow)
-                return false;
+            //Not sure about this.
+            if (Config.RoleConfig.DefaultAllow)
+                return true;
 
             return true;
         }
