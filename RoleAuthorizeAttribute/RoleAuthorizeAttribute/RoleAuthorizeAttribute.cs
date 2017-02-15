@@ -48,7 +48,7 @@ namespace RoleAuthorize.Mvc
             if (Config.RoleConfig.DefaultAllow)
                 return true;
 
-            return true;
+            return false;
         }
     }
 }
