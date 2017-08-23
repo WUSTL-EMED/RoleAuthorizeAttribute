@@ -56,7 +56,7 @@ namespace RoleAuthorize.Mvc
         protected override void HandleUnauthorizedRequest(System.Web.Mvc.AuthorizationContext filterContext)
         {
             IPrincipal user = filterContext.HttpContext.User;
-            if (Config.RoleConfig.Authorized403 && user != null && user.Identity != null && user.Identity.IsAuthenticated)
+            if (Config.RoleConfig.Authenticated403 && user != null && user.Identity != null && user.Identity.IsAuthenticated)
                 filterContext.Result = new HttpStatusCodeResult(403);
             else
                 filterContext.Result = new HttpUnauthorizedResult();
@@ -118,7 +118,7 @@ namespace RoleAuthorize.Api
         //{
         //    IPrincipal user = System.Web.HttpContext.Current.User;//TODO: FIX THIS!!!
         //    //IPrincipal user = actionContext.ControllerContext.Request.RequestContext.Principal;
-        //    if (Config.RoleConfig.Authorized403 && user != null && user.Identity != null && user.Identity.IsAuthenticated)
+        //    if (Config.RoleConfig.Authenticated403 && user != null && user.Identity != null && user.Identity.IsAuthenticated)
         //        actionContext.Response = new HttpResponseMessage(HttpStatusCode.Forbidden);
         //    else
         //        actionContext.Response = new HttpResponseMessage(HttpStatusCode.Unauthorized);
