@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/PCFDev/RoleAuthorizeAttribute</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>$description$</description>
-    <copyright>Copyright © 2016 Aaron Papp</copyright>
+    <copyright>Copyright © 2017 Aaron Papp</copyright>
     <language>en-US</language>
     <tags>authorization authorization-attribute</tags>
     <dependencies>

@@ -37,6 +37,17 @@ namespace RoleAuthorize.Config
             }
         }
 
+        public static bool Authorized403
+        {
+            get
+            {
+                var config = ConfigurationManager.GetSection(RoleSettingsSection.SectionName) as RoleSettingsSection;
+                if (config == null)
+                    return false;
+                return config.Authorized403;
+            }
+        }
+
         private static RoleConfigElement GetConfig(string name)
         {
             var config = ConfigurationManager.GetSection(RoleSettingsSection.SectionName) as RoleSettingsSection;
@@ -184,6 +195,7 @@ namespace RoleAuthorize.Config
     {
         public const string SectionName = "authorizationRoles";
         private const string _DefaultAllow = "defaultAllow";
+        private const string _Authorized403 = "authorized403";
 
         [ConfigurationProperty(_DefaultAllow, IsRequired = false, DefaultValue = false)]
         public bool DefaultAllow
@@ -191,6 +203,15 @@ namespace RoleAuthorize.Config
             get
             {
                 return (bool)base[_DefaultAllow];
+            }
+        }
+
+        [ConfigurationProperty(_Authorized403, IsRequired = false, DefaultValue = false)]
+        public bool Authorized403
+        {
+            get
+            {
+                return (bool)base[_Authorized403];
             }
         }
 
