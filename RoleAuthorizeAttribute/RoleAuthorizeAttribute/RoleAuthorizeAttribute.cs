@@ -39,11 +39,11 @@ namespace RoleAuthorize.Mvc
                 return false;
 
             var users = RoleNamesSplit.SelectMany(_ => Config.RoleConfig.GetUsers(_)).ToList();
-            if (users.Count > 0 && users.Contains(user.Identity.Name, StringComparer.OrdinalIgnoreCase))
+            if (users.Count > 0 && (users.Contains(user.Identity.Name, StringComparer.OrdinalIgnoreCase) || users.Contains("*", StringComparer.OrdinalIgnoreCase)))
                 return true;
 
             var roles = RoleNamesSplit.SelectMany(_ => Config.RoleConfig.GetRoles(_)).ToList();
-            if (roles.Count > 0 && roles.Any(user.IsInRole))
+            if (roles.Count > 0 && (roles.Any(user.IsInRole) || roles.Contains("*", StringComparer.OrdinalIgnoreCase)))
                 return true;
 
             //Not sure about this.
@@ -99,11 +99,11 @@ namespace RoleAuthorize.Api
                 return false;
 
             var users = RoleNamesSplit.SelectMany(_ => Config.RoleConfig.GetUsers(_)).ToList();
-            if (users.Count > 0 && users.Contains(user.Identity.Name, StringComparer.OrdinalIgnoreCase))
+            if (users.Count > 0 && (users.Contains(user.Identity.Name, StringComparer.OrdinalIgnoreCase) || users.Contains("*", StringComparer.OrdinalIgnoreCase)))
                 return true;
 
             var roles = RoleNamesSplit.SelectMany(_ => Config.RoleConfig.GetRoles(_)).ToList();
-            if (roles.Count > 0 && roles.Any(user.IsInRole))
+            if (roles.Count > 0 && (roles.Any(user.IsInRole) || roles.Contains("*", StringComparer.OrdinalIgnoreCase)))
                 return true;
 
             //Not sure about this.
