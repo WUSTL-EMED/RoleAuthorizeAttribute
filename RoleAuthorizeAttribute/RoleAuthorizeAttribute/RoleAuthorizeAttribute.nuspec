@@ -2,15 +2,15 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>RoleAuthorize</id>
-    <version>$version$</version>
+    <version>1.1.0.0</version>
     <title>RoleAuthorize</title>
     <authors>Aaron Papp</authors>
     <owners>Aaron Papp</owners>
     <licenseUrl>https://github.com/PCFDev/RoleAuthorizeAttribute/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/PCFDev/RoleAuthorizeAttribute</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>$description$</description>
-    <copyright>Copyright © 2017 Aaron Papp</copyright>
+    <description>A .NET library for enabling configurable role based authorization for MVC and Web API.</description>
+    <copyright>Copyright © 2018 Aaron Papp</copyright>
     <language>en-US</language>
     <tags>authorization authorization-attribute</tags>
     <dependencies>
@@ -27,6 +27,7 @@
     </frameworkAssemblies>
   </metadata>
   <files>
-    <file src="web.config.transform" target="content\web.config.transform"  />
+    <file src="RoleAuthorizeConfig.xsd" target="content\RoleAuthorizeConfig.xsd"  />
+    <file src="web.config.transform" target="content\web.config.transform" />
   </files>
 </package>
