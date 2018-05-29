@@ -16,14 +16,14 @@ namespace RoleAuthorize.Mvc
 
         public string RoleNames
         {
-            get { return _RoleNames ?? String.Empty; }
+            get { return _RoleNames ?? string.Empty; }
             set
             {
                 _RoleNames = value;
                 if (value == null)
                     RoleNamesSplit = new string[0];
                 else
-                    RoleNamesSplit = value.Split(Delimiter).Select(_ => _.Trim()).Where(_ => !String.IsNullOrEmpty(_)).ToArray();
+                    RoleNamesSplit = value.Split(Delimiter).Select(_ => _.Trim()).Where(_ => !string.IsNullOrEmpty(_)).ToArray();
             }
         }
 
@@ -43,7 +43,7 @@ namespace RoleAuthorize.Mvc
                 return true;
 
             var roles = RoleNamesSplit.SelectMany(_ => Config.RoleConfig.GetRoles(_)).ToList();
-            if (roles.Count > 0 && (roles.Any(user.IsInRole) || roles.Contains("*", StringComparer.OrdinalIgnoreCase)))
+            if (roles.Count > 0 && (roles.Any(user.IsInRole) || roles.Contains("*", StringComparer.OrdinalIgnoreCase))) //TODO: Only allow wildcard in users?
                 return true;
 
             //Not sure about this.
@@ -55,6 +55,9 @@ namespace RoleAuthorize.Mvc
 
         protected override void HandleUnauthorizedRequest(System.Web.Mvc.AuthorizationContext filterContext)
         {
+            if (filterContext == null)
+                throw new ArgumentNullException(nameof(filterContext));
+
             IPrincipal user = filterContext.HttpContext.User;
             if (Config.RoleConfig.Authenticated403 && user != null && user.Identity != null && user.Identity.IsAuthenticated)
                 filterContext.Result = new HttpStatusCodeResult(403);
@@ -75,14 +78,14 @@ namespace RoleAuthorize.Api
 
         public string RoleNames
         {
-            get { return _RoleNames ?? String.Empty; }
+            get { return _RoleNames ?? string.Empty; }
             set
             {
                 _RoleNames = value;
                 if (value == null)
                     RoleNamesSplit = new string[0];
                 else
-                    RoleNamesSplit = value.Split(Delimiter).Select(_ => _.Trim()).Where(_ => !String.IsNullOrEmpty(_)).ToArray();
+                    RoleNamesSplit = value.Split(Delimiter).Select(_ => _.Trim()).Where(_ => !string.IsNullOrEmpty(_)).ToArray();
             }
         }
 
@@ -103,7 +106,7 @@ namespace RoleAuthorize.Api
                 return true;
 
             var roles = RoleNamesSplit.SelectMany(_ => Config.RoleConfig.GetRoles(_)).ToList();
-            if (roles.Count > 0 && (roles.Any(user.IsInRole) || roles.Contains("*", StringComparer.OrdinalIgnoreCase)))
+            if (roles.Count > 0 && (roles.Any(user.IsInRole) || roles.Contains("*", StringComparer.OrdinalIgnoreCase))) //TODO: Only allow wildcard in users?
                 return true;
 
             //Not sure about this.

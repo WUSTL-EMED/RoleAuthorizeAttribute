@@ -1,7 +1,11 @@
 ﻿<configuration>
   <configSections>
-    <section name="authorizationRoles" type="RoleAuthorize.Config.RoleSettingsSection, RoleAuthorizeAttribute" requirePermission="false" />
+    <sectionGroup name="roleAuthorize">
+      <section name="authorizationRoles" type="RoleAuthorize.Config.RoleSettingsSection, RoleAuthorizeAttribute" requirePermission="false" />
+    </sectionGroup>
   </configSections>
-  <authorizationRoles>
-  </authorizationRoles>
+  <roleAuthorize>
+    <authorizationRoles xmlns="urn:RoleAuthorize">
+    </authorizationRoles>
+  </roleAuthorize>
 </configuration>

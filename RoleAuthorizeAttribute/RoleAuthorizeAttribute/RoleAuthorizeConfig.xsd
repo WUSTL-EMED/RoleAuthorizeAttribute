@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:tns="urn:RoleAuthorize"
+           targetNamespace="urn:RoleAuthorize"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="authorizationRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="role" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="name" use="required" />
+                <xs:attribute type="xs:string" name="roles" use="optional" />
+                <xs:attribute type="xs:string" name="users" use="optional" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:boolean" name="authenticated403" use="optional" />
+      <xs:attribute type="xs:boolean" name="defaultAllow" use="optional" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

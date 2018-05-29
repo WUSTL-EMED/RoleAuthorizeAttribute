@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 //TODO: Config transform to add section?
@@ -15,7 +16,7 @@ namespace RoleAuthorize.Config
             var config = GetConfig(name);
             if (config == null)
                 return Enumerable.Empty<string>();
-            return config.Roles.Split(Delimiter).Select(_ => _.Trim()).Where(_ => !String.IsNullOrEmpty(_));
+            return config.Roles.Split(Delimiter).Select(_ => _.Trim()).Where(_ => !string.IsNullOrEmpty(_));
         }
 
         public static IEnumerable<string> GetUsers(string name)
@@ -23,7 +24,7 @@ namespace RoleAuthorize.Config
             var config = GetConfig(name);
             if (config == null)
                 return Enumerable.Empty<string>();
-            return config.Users.Split(Delimiter).Select(_ => _.Trim()).Where(_ => !String.IsNullOrEmpty(_));
+            return config.Users.Split(Delimiter).Select(_ => _.Trim()).Where(_ => !string.IsNullOrEmpty(_));
         }
 
         public static bool DefaultAllow
@@ -57,7 +58,7 @@ namespace RoleAuthorize.Config
         }
     }
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1010:CollectionsShouldImplementGenericInterface", Justification = "ConfigurationElementCollection is the recommended base class for collections of ConfigurationElement objects.")]
+    [SuppressMessage("Microsoft.Design", "CA1010:CollectionsShouldImplementGenericInterface", Justification = "ConfigurationElementCollection is the recommended base class for collections of ConfigurationElement objects.")]
     internal class RoleCollection : ConfigurationElementCollection
     {
         internal const string _ElementName = "role";
@@ -65,7 +66,7 @@ namespace RoleAuthorize.Config
         public RoleCollection()
         {
             //ServerConfigElement details = (ServerConfigElement)CreateNewElement();
-            //if (!String.IsNullOrEmpty(details.Name))
+            //if (!string.IsNullOrEmpty(details.Name))
             //    BaseAdd(details, false);
         }
 
@@ -193,7 +194,7 @@ namespace RoleAuthorize.Config
 
     internal class RoleSettingsSection : ConfigurationSection
     {
-        public const string SectionName = "authorizationRoles";
+        public const string SectionName = "roleAuthorize/authorizationRoles";
         private const string _DefaultAllow = "defaultAllow";
         private const string _Authenticated403 = "authenticated403";
 
@@ -221,7 +222,7 @@ namespace RoleAuthorize.Config
         {
             get
             {
-                return (RoleCollection)base[String.Empty];
+                return (RoleCollection)base[string.Empty];
             }
         }
     }

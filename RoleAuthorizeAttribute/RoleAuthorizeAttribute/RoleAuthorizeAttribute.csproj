@@ -33,7 +33,7 @@
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseNuget|AnyCPU'">
     <OutputPath>bin\ReleaseNuget\</OutputPath>
@@ -44,6 +44,9 @@
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>RoleAuthorizeAttribute.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -88,6 +91,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RoleAuthorizeExtensions.cs" />
+    <None Include="RoleAuthorizeAttribute.snk" />
+    <None Include="RoleAuthorizeConfig.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="web.config.transform" />
     <None Include="RoleAuthorizeAttribute.nuspec" />
     <Compile Include="Configuration.cs" />
