@@ -5,7 +5,7 @@
     </sectionGroup>
   </configSections>
   <roleAuthorize>
-    <authorizationRoles xmlns="urn:RoleAuthorize">
+    <authorizationRoles xmlns="urn:RoleAuthorize" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="RoleAuthorizeConfig.xsd">
     </authorizationRoles>
   </roleAuthorize>
 </configuration>

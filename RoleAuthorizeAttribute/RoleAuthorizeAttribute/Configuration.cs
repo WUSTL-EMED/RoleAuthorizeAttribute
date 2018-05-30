@@ -225,5 +225,18 @@ namespace RoleAuthorize.Config
                 return (RoleCollection)base[string.Empty];
             }
         }
+
+        protected override bool OnDeserializeUnrecognizedAttribute(string name, string value)
+        {
+            switch (name)
+            {
+                case "xmlns":
+                case "xmlns:xsi":
+                case "xsi:noNamespaceSchemaLocation":
+                    return true;
+                default:
+                    return base.OnDeserializeUnrecognizedAttribute(name, value);
+            }
+        }
     }
 }
