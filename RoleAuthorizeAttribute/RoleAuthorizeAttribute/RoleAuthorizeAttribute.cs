@@ -32,7 +32,7 @@ namespace RoleAuthorize.Mvc
         protected override bool AuthorizeCore(System.Web.HttpContextBase httpContext)
         {
             if (httpContext == null)
-                throw new ArgumentNullException("httpContext");
+                throw new ArgumentNullException(nameof(httpContext));
 
             IPrincipal user = httpContext.User;
             if (user == null || user.Identity == null || !user.Identity.IsAuthenticated)

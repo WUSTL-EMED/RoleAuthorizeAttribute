@@ -126,7 +126,7 @@ namespace RoleAuthorize.Config
         public void Remove(RoleConfigElement details)
         {
             if (details == null)
-                throw new ArgumentNullException("details");
+                throw new ArgumentNullException(nameof(details));
 
             if (BaseIndexOf(details) >= 0)
                 BaseRemove(details.Name);
