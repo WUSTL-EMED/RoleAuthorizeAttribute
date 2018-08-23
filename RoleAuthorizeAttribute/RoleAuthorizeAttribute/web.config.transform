@@ -1,11 +1,7 @@
 ﻿<configuration>
   <configSections>
-    <sectionGroup name="roleAuthorize">
-      <section name="authorizationRoles" type="RoleAuthorize.Config.RoleSettingsSection, RoleAuthorizeAttribute" requirePermission="false" />
-    </sectionGroup>
+    <section name="authorizationRoles" type="RoleAuthorize.Config.RoleSettingsSection, RoleAuthorizeAttribute" requirePermission="false" />
   </configSections>
-  <roleAuthorize>
-    <authorizationRoles xmlns="urn:RoleAuthorize" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="RoleAuthorizeConfig.xsd">
-    </authorizationRoles>
-  </roleAuthorize>
+  <authorizationRoles xmlns="urn:RoleAuthorize" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="RoleAuthorizeConfig.xsd">
+  </authorizationRoles>
 </configuration>
