@@ -363,25 +363,3 @@ FodyWeavers.xsd
 
 # Strong name key file
 *.snk
-
-RoleAuthorizeAttribute/SampleWebApplication/Content/bootstrap.css
-RoleAuthorizeAttribute/SampleWebApplication/Content/bootstrap.min.css
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/bootstrap.js
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/bootstrap.min.js
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/jquery-3.6.0.intellisense.js
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/jquery-3.6.0.js
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/jquery-3.6.0.min.js
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/jquery-3.6.0.min.map
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/jquery-3.6.0.slim.js
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/jquery-3.6.0.slim.min.js
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/jquery-3.6.0.slim.min.map
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/jquery.validate-vsdoc.js
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/jquery.validate.js
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/jquery.validate.min.js
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/jquery.validate.unobtrusive.js
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/jquery.validate.unobtrusive.min.js
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/modernizr-2.8.3.js
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/respond.js
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/respond.matchmedia.addListener.js
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/respond.matchmedia.addListener.min.js
-RoleAuthorizeAttribute/SampleWebApplication/Scripts/respond.min.js
