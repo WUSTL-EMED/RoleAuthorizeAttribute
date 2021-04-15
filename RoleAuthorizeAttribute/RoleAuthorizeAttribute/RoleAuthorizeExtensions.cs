@@ -14,7 +14,7 @@ namespace RoleAuthorize.Extensions
         /// </summary>
         /// <param name="user"></param>
         /// <param name="names">A comma separated list of role names.</param>
-        /// <returns>True if the user is in at least one named role, otherwise false.</returns>
+        /// <returns>True if the user is in at least one named role; otherwise, false.</returns>
         public static bool IsInNamedRole(this IPrincipal user, string names)
         {
             if (user == null)
@@ -31,7 +31,7 @@ namespace RoleAuthorize.Extensions
         /// </summary>
         /// <param name="user"></param>
         /// <param name="names">An enumerable of role names.</param>
-        /// <returns>True if the user is in at least one named role, otherwise false.</returns>
+        /// <returns>True if the user is in at least one named role; otherwise, false.</returns>
         public static bool IsInNamedRole(this IPrincipal user, IEnumerable<string> names)
         {
             if (user == null)
