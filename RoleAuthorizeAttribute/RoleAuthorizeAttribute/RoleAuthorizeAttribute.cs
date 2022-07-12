@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace RoleAuthorize.Mvc
 {
+    // TODO: pass in a claim type for username instead of assuming user.Identity.Name???
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = true)]
     public sealed class RoleAuthorizeAttribute : System.Web.Mvc.AuthorizeAttribute, IAuthorizationFilter //TODO: Change how this works so we don't inherit AuthorizeAttribute, it brings some junk along.
     {
